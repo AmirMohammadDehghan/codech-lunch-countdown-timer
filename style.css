@@ -1,0 +1,204 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Red Hat Text', sans-serif;
+    text-align: center;
+    background: linear-gradient(hsl(235, 16%, 14%), rgb(38, 29, 46));
+    font-size: 14px;
+}
+
+.container{
+    min-height: 80vh;
+    position: relative;
+    background-image: url(images/pattern-hills.svg), url(images/bg-stars.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 850px,950px;
+    background-position: 90% 100%, 50% 30%;
+    /* border: 2px solid red; */
+}
+
+.heading{
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    /* border: 2px solid black; */
+    width: 90%;
+    margin: auto;
+    margin-top: 7em;
+    letter-spacing: .3em;
+}
+
+.countdown-container{
+    /* border: 2px solid white; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    width: 90%;
+    margin: auto;
+    padding: 2em 0;
+    
+}
+
+.card{
+    height: 60px;
+    background: hsl(236, 21%, 26%);
+    /* border: 2px solid red; */
+    text-align: center;
+    font-size: 32px;
+    color: hsl(345, 95%, 68%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 8px 1px -4px hsl(234, 17%, 12%);
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: transform .7s;
+    
+}
+
+.display{
+    /* border: 2px solid red; */
+    z-index: 1;
+}
+
+.front-display{
+    /* border: 2px solid blue; */
+    position: absolute;
+    height:30px;
+    top: 0px;
+    width: 100%;
+    background: hsl(233, 21%, 23%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    backface-visibility:hidden;
+   transition: transform 2s;
+    animation: front-display 3s 1s infinite ease-in-out;
+}
+
+/* .front-display:hover{
+    transform: rotateX(-180deg);
+    height: 60px;
+} */
+
+
+  /* @keyframes front-display {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(-180deg); height:60px; }
+    
+  } */
+
+
+.back-display{
+    /* border: 2px solid green; */
+    position: absolute;
+    height:30px;
+    top: 30px;
+    width: 100%;
+    
+}
+
+.display-heading{
+    font-size: 7px;
+    text-transform: uppercase;
+    color: hsl(237, 18%, 59%);
+    letter-spacing: .2em;
+    margin-top: 10px;
+}
+
+.social-icons{
+    /* border: 2px solid red; */
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+    margin-left: 35%;
+}
+
+.icon-flex:nth-child(2), .icon-flex:nth-child(3){
+    margin-left: 2em;
+}
+
+
+.fab{
+    color: hsl(237, 18%, 59%);
+    font-size: 20px;
+}
+
+.fab:hover{
+    color: hsl(345, 95%, 68%);
+    cursor: pointer;
+}
+
+.attribution
+ { 
+     display: none;
+    font-size: 11px; 
+    text-align: center; 
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    
+    /* border: 2px solid red; */
+}
+
+   
+
+.attribution a 
+{ 
+    color: hsl(345, 95%, 68%);
+}
+
+
+/* ----- For desktop ------- */
+
+@media (min-width:700px){
+
+    .container{
+        min-height: 78vh;
+        background-image: url(images/pattern-hills.svg), url(images/bg-stars.svg);
+        background-size: contain, 950px;
+    }
+
+    .heading{
+        margin-top: 10em;
+        font-size: 13px;
+    }
+
+    .countdown-container{
+        width: 40%;
+        margin-top: 2em;
+    }
+
+    .card{
+        font-size: 50px;
+        height: 80px;
+    }
+
+    .display-heading{
+        font-size: 9px;
+        margin-top: 15px;
+    }
+
+    .front-display{
+        height: 40px;
+    }
+
+    .social-icons{
+        margin-left: 45%;
+        bottom: 50px;
+    }
+
+    .attribution{
+        display: block;
+        margin-left: 30%;
+    }
+
+    
+}
