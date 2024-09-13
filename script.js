@@ -5,7 +5,7 @@ secondsCount = document.querySelector('[data-seconds]');
 
 
 const date = new Date();
-date.setDate(date.getDate() + 14);
+date.setDate(7);
 
 
 
